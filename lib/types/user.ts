@@ -8,4 +8,6 @@ export interface User {
   updatedAt: string;
   isConfirmed?: boolean;
   isSettingConfirmed?: boolean;
+  transactionFee?: string;
+  apiKey?: string;
 }

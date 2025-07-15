@@ -24,7 +24,6 @@ export default function NewLaunchPage() {
   const [activeTab, setActiveTab] = useState<TabValue>("metadata");
   const [wallets, setWallets] = useState<Wallet[]>([]);
 
-  // Check if user has confirmed settings
   useEffect(() => {
     if (!user?.isSettingConfirmed) {
       router.push("/settings");

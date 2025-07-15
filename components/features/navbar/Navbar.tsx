@@ -27,12 +27,32 @@ interface NavItem {
 const navItems: NavItem[] = [
   { name: "History", path: "/history" },
   { name: "Setting", path: "/settings" },
-  { 
+  /*{ 
     name: "New Launch", 
     path: "/new-launch",
     requiresSettingsConfirmed: true,
     disabledReason: "Settings not confirmed!"
+  },*/
+    { 
+    name: "Wallets", 
+    path: "/wallets",
+    requiresSettingsConfirmed: true,
+    disabledReason: "Settings not confirmed!"
   },
+      { 
+    name: "Chart", 
+    path: "/chart",
+    requiresSettingsConfirmed: true,
+    disabledReason: "Settings not confirmed!"
+  },
+     { 
+    name: "Actions", 
+    path: "/actions",
+    requiresSettingsConfirmed: true,
+    disabledReason: "Settings not confirmed!"
+  },
+
+
 ];
 
 export function Navbar() {
@@ -172,7 +192,7 @@ export function Navbar() {
             : "bg-background/80 backdrop-blur"
         }`}
       >
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        <div className="container mx-auto flex h-16 items-center justify-between">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link href="/" className="flex items-center gap-2 font-bold">
               <Bitcoin/>

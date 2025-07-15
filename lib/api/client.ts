@@ -4,6 +4,9 @@ import { authApi } from './auth';
 export const apiClient = axios.create({
   baseURL: 'https://bundler-backend-0c8s.onrender.com/',
   withCredentials: true,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 apiClient.interceptors.request.use((config) => {

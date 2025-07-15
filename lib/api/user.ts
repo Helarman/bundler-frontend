@@ -16,7 +16,10 @@ export const userApi = {
     rpcUrl?: string;
     wssRpcUrl?: string;
     devWallet?: string;
+    apiKey?: string;
+    transactionFee?: number;
   }): Promise<User> => {
+    console.log(data)
     try {
       const response = await apiClient.put('/user/update', data);
       return response.data;
