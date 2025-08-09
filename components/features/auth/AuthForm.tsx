@@ -26,7 +26,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 const formSchema = z.object({
-  email: z.string().email('Please enter a valid email address'),
+  email: z.string()
+  .email(''),
   password: z.string()
     .min(8, 'Password must be at least 8 characters')
     .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
@@ -61,7 +62,7 @@ export const AuthForm = () => {
           description: 'Your account has been successfully created.',
         });
       }
-      router.push('/');
+      router.push('/wallets');
     } catch (error) {
       toast.error('Authentication failed', {
         description: error instanceof Error ? error.message : 'An unknown error occurred',

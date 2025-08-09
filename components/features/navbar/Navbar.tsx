@@ -25,9 +25,9 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { name: "History", path: "/history" },
+  /*{ name: "History", path: "/history" },
   { name: "Setting", path: "/settings" },
-  /*{ 
+  { 
     name: "New Launch", 
     path: "/new-launch",
     requiresSettingsConfirmed: true,
@@ -39,7 +39,7 @@ const navItems: NavItem[] = [
     requiresSettingsConfirmed: true,
     disabledReason: "Settings not confirmed!"
   },
-      { 
+    /*  { 
     name: "Chart", 
     path: "/chart",
     requiresSettingsConfirmed: true,
@@ -50,7 +50,7 @@ const navItems: NavItem[] = [
     path: "/actions",
     requiresSettingsConfirmed: true,
     disabledReason: "Settings not confirmed!"
-  },
+  },*/
 
 
 ];

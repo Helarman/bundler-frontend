@@ -2,7 +2,7 @@ import axios from 'axios';
 import { authApi } from './auth';
 
 export const apiClient = axios.create({
-  baseURL: 'https://bundler-backend-0c8s.onrender.com/',
+  baseURL: 'http://localhost:5000/',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
