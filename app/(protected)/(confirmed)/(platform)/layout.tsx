@@ -27,7 +27,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <div>
-      <nav className=" container mx-auto relative z-20 mb-4">
+      {/* <nav className=" container mx-auto relative z-20 mb-4">
         <div className="flex items-center gap-4">
           <div className="relative flex-1">
             <Input
@@ -49,7 +49,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             </Button>
           )}
 
-          {/*<Button
+         <Button
             variant="outline"
             onClick={() => {
               setTickEffect(true);
@@ -60,9 +60,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             Wallets: <div className={`font-bold text-primary font-mono ${tickEffect ? 'scale-110 transition-transform' : 'transition-transform'}`}>
               {children.props.walletCount}
             </div>
-          </Button>*/}
+          </Button>
         </div>
-      </nav>
+      </nav>*/}
       
       {children}
     </div>

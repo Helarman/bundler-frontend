@@ -39,6 +39,19 @@ const navItems: NavItem[] = [
     requiresSettingsConfirmed: true,
     disabledReason: "Settings not confirmed!"
   },
+     { 
+    name: "DCA", 
+    path: "/dca",
+    requiresSettingsConfirmed: true,
+    disabledReason: "Settings not confirmed!"
+  },
+       { 
+    name: "Pump", 
+    path: "/pump",
+    requiresSettingsConfirmed: true,
+    disabledReason: "Settings not confirmed!"
+  },
+
     /*  { 
     name: "Chart", 
     path: "/chart",
