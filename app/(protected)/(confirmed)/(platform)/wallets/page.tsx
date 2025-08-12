@@ -173,7 +173,8 @@ export default function WalletManagementPage() {
         password,
       });
       setExportedKey(key);
-      toast.success('Account exported successfully. Copy and store securely.');
+      copyToClipboard(key)
+      toast.success('Account exported successfully.');
     } catch (error) {
       toast.error('Failed to export account');
     } finally {
