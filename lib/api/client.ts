@@ -2,7 +2,7 @@ import axios from 'axios';
 import { authApi } from './auth';
 
 export const apiClient = axios.create({
-  baseURL: 'http://localhost:5000/',
+  baseURL: 'http://85.239.147.232:5000/',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
