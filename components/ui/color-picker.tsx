@@ -14,14 +14,11 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
   return (
     <Popover>
       <PopoverTrigger asChild>
+        
         <Button
           variant="outline"
-          className="w-full justify-start"
+          className={`w-full justify-center bg-[${value}]`}
         >
-          <div 
-            className="w-4 h-4 rounded-full mr-2" 
-            style={{ backgroundColor: value }} 
-          />
           {value}
         </Button>
       </PopoverTrigger>

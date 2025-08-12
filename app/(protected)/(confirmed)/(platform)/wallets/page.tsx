@@ -50,6 +50,18 @@ import { Copy, Plus, Trash2, Upload, Download, Check, ChevronDown } from 'lucide
 import { ColorPicker } from '@/components/ui/color-picker';
 
 
+const STANDARD_COLORS = [
+  '#3b82f6', // blue-500
+  '#ef4444', // red-500
+  '#10b981', // emerald-500
+  '#f59e0b', // amber-500
+  '#8b5cf6', // violet-500
+  '#ec4899', // pink-500
+  '#14b8a6', // teal-500
+  '#f97316', // orange-500
+  '#64748b', // slate-500
+  '#84cc16', // lime-500
+];
 
 export default function WalletManagementPage() {
   const [accounts, setAccounts] = useState<AccountEntity[]>([]);
@@ -334,12 +346,30 @@ export default function WalletManagementPage() {
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                   <Label htmlFor="color" className="text-right">
-                    Color
+                    Color Select
                   </Label>
                   <ColorPicker
                     value={newAccount.color || '#3b82f6'}
                     onChange={(color) => setNewAccount({ ...newAccount, color })}
                   />
+                </div>
+                
+                <div  className="grid grid-cols-4 items-center gap-4"> 
+                   <Label htmlFor="color" className="text-right">
+                    Color Picker
+                  </Label>
+                  <div className="grid grid-cols-10 gap-7 ml-2">
+                    {STANDARD_COLORS.map((color) => (
+                      <button
+                        key={color}
+                        type="button"
+                        className="w-6 h-6 rounded-full border-2 border-transparent hover:border-gray-300 transition-colors"
+                        style={{ backgroundColor: color }}
+                        onClick={() => setNewAccount({ ...newAccount, color })}
+                        title={`Color ${color}`}
+                      />
+                    ))}
+                  </div>
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                   <Label className="text-right">Randomize</Label>
@@ -413,7 +443,7 @@ export default function WalletManagementPage() {
                     onChange={(e) => setNewAccount({ ...newAccount, name: e.target.value })}
                   />
                 </div>
-                <div className="grid grid-cols-4 items-center gap-4">
+                <div className="grid items-center gap-4">
                   <Label htmlFor="import-color" className="text-right">
                     Color
                   </Label>
@@ -421,6 +451,20 @@ export default function WalletManagementPage() {
                     value={newAccount.color || '#3b82f6'}
                     onChange={(color) => setNewAccount({ ...newAccount, color })}
                   />
+                </div>
+                <div  className="grid grid-cols-4 items-center gap-4"> 
+                  <div className="flex flex-wrap gap-1 ml-2">
+                    {STANDARD_COLORS.map((color) => (
+                      <button
+                        key={color}
+                        type="button"
+                        className="w-6 h-6 rounded-full border-2 border-transparent hover:border-gray-300 transition-colors"
+                        style={{ backgroundColor: color }}
+                        onClick={() => setNewAccount({ ...newAccount, color })}
+                        title={`Color ${color}`}
+                      />
+                    ))}
+                  </div>
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                   <Label className="text-right">Randomize</Label>
