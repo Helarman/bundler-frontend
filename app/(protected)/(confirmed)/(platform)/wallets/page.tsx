@@ -176,6 +176,7 @@ export default function WalletManagementPage() {
       copyToClipboard(key)
       toast.success('Account exported successfully.');
     } catch (error) {
+      console.log(error)
       toast.error('Failed to export account');
     } finally {
       setIsLoading(false);
