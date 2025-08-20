@@ -212,19 +212,19 @@ export default function WalletManagementPage() {
     }
   };
 
-  const handleTransfer = async () => {
-    if (!selectedAccount) return;
-    try {
-      setIsLoading(true);
-      const tx = await AccountsClient.transferSol(selectedAccount.id, transferData);
-      toast.success(`Transaction sent: ${tx.txHash}`);
-      setShowTransferDialog(false);
-    } catch (error) {
-      toast.error('Failed to transfer SOL');
-    } finally {
-      setIsLoading(false);
-    }
-  };
+const handleTransfer = async () => {
+  if (!selectedAccount) return;
+  try {
+    setIsLoading(true);
+    const tx = await AccountsClient.transferSol(selectedAccount.id, transferData);
+    toast.success(`Transaction sent: ${tx.txHash}`);
+    setShowTransferDialog(false);
+  } catch (error) {
+    toast.error('Failed to transfer SOL');
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   const handleTokenAction = async () => {
     if (!selectedAccount) return;
@@ -749,20 +749,36 @@ export default function WalletManagementPage() {
               <Label htmlFor="amount" className="text-right">
                 Amount
               </Label>
-              <Input
-                id="amount"
-                type="number"
-                className="col-span-3"
-                value={transferData.amount || ''}
-                onChange={(e) =>
-                  setTransferData({ 
-                    ...transferData, 
-                    amount: e.target.value ? parseFloat(e.target.value) : undefined,
+             <Input
+            id="amount"
+            type="number"
+            step="any"
+            className="col-span-3"
+            value={transferData.amount ?? ""}
+            onChange={(e) => {
+              const value = e.target.value;
+              
+              if (value === "") {
+                setTransferData({
+                  ...transferData,
+                  amount: undefined,
+                  percent: undefined
+                });
+              } else {
+                // Проверяем, является ли значение числом
+                const numValue = parseFloat(value);
+                if (!isNaN(numValue)) {
+                  setTransferData({
+                    ...transferData,
+                    amount: numValue,
                     percent: undefined
-                  })
+                  });
                 }
-                placeholder="Enter exact amount"
-              />
+                // Если NaN, просто игнорируем ввод
+              }
+            }}
+            placeholder="Enter exact amount"
+          />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="percent" className="text-right">
